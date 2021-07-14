@@ -1,0 +1,157 @@
+HOME
+SUBSCRIBE
+CONTRIBUTE US
+CONTACT US
+ABOUT
+FORUM & DISCUS
+TOOLS FOR GEEK
+LEADERBOARD
+CSEstack
+What do you want to Learn Today?
+
+Programming
+Tutorial- C/C++
+Tutorial- Django
+Tutorial- Git
+Tutorial- HTML & CSS
+Tutorial- Java
+Tutorial- MySQL
+Tutorial- Python
+Competitive Coding Challenges
+CSE Subject
+(CD) Compiler Design
+(CN) Computer Network
+(COA) Computer Organization & Architecture
+(DBMS) Database Management System
+(DS) Data Structure
+(OS) Operating System
+(ToA) Theory of Automata
+(WT) Web Technology
+Interview Questions
+Interview Questions- Company Wise
+Interview Questions- Coding Round
+Interview Questions- Python
+Interview Questions- REST API
+Interview Questions- Web Scraping
+Interview Questions- HR Round
+Aptitude Preparation Guide
+GATE 2022
+Linux
+Trend
+Full Stack Development
+Artificial Intelligence (AI)
+BigData
+Cloud Computing
+Machine Learning (ML)
+Write for Us
+Submit Article
+Submit Source Code or Program
+Share Your Interview Experience
+IDE
+Tools
+Type the text...
+Write a C Program to Implement Stack using Array
+Aniruddha Chaudhari/31002/2
+C / C++Code
+The stack is first in last out data structure to store the elements. Elements are accessed by push pop operations. Push operation adds a new element in the stack at the top, whereas pop operation deletes the topmost element from the stack. The stack can be implemented using array. Stack using array is the easiest way to understand, how stack actual work.
+
+To implement the stack using array, we need to keep track of the topmost element in the array.
+
+In this program, we have written two functions namely push, and pop that will work as push, pop operation in the stack using array.
+
+Difficulty Level: Low
+
+Operations to be performed on Stack using Array:
+Push Operation on Stack: 
+
+Add the new element at the top of the stack.
+
+Pop Operation on Stack:
+
+Read and delete topmost elements from the stack.
+
+Stack Overflow:
+If the number of elements in the stack exceeds, a stack overflow occurs.
+
+Stack Underflow: 
+
+While performing the pop operation on the stack, if there is no more element to pop, stack underflow occurs.
+
+#include<stdio.h>
+ 
+int nTop=-1;
+int *pStack = NULL;
+/*
+nTop: To refer topmost element in array.
+ 
+pStack: pointer to array that 
+can be implemented as stack pointer
+*/
+/*
+Push new element 
+at the top of linked list
+*/
+void push(int n)
+{
+  printf("\nPush element: %d", n);
+  if(nTop>9)
+  printf("Overflow");
+  else
+  {
+    nTop++;
+    pStack[nTop] = n;
+  }
+}
+/*
+Pop topmost element 
+from stack
+*/
+ 
+void pop()
+{
+  printf("\nPop topmost element");
+  if(nTop<0)
+  printf("\nUnderflow");
+  else
+  {
+    pStack[nTop] = -1;
+    nTop--;
+   }
+}
+ 
+void DisplayStack()
+{
+  int i=0;
+  if(nTop<0)
+  printf("\nStack is empty");
+  else
+  {
+    printf("\nDisplay Stack: ");
+    for(; i<=nTop;i++)
+    printf("%d ", pStack[i]);
+  }
+}
+ 
+int main()
+{
+  int nSize=10;
+  /*
+    allocate dynamic memory of size 10 int
+    to store 10 elements 
+  */
+  pStack = (int *)malloc(sizeof(int)*10); 
+     
+  push(10);
+  push(12);
+  DisplayStack();
+  pop();
+  DisplayStack();
+  push(45);
+  push(24);
+  push(12);
+  DisplayStack();
+  pop();
+  pop();
+  DisplayStack();
+}
+ 
